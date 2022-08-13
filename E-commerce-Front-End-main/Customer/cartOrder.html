@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CartOrder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ 
+    <style>
+    
+       
+
+        .table tr td img {
+            width: 45px;
+            height: 45px;
+        }
+        
+       .image{
+        margin-left: 30%;
+       }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="col-sm-6">
+
+                
+
+                <div class="card  mt-2 info" >
+                    <div class="card-header bg-light text-dark text-center">
+
+                      <h6 class="mb-0 pb-0">CART</h6>
+                      <small class="mt-0 pt-0" name="cartHeadingDEscription ">There is one item in this cart</small>
+                    </div>
+
+
+
+
+                    <div class="card-body ">
+                       <div class="table-responsive">
+                            <table class="table" id="CartTable">
+                               <thead>
+                    <td> Product</td><td>Name</td> <td> Price </td><td>Quantity </td><td>Total</td>
+                                   <td></td>
+                               </thead>
+                                
+                               <tbody>
+                                    <tr>
+                                        <td><img src="images/kurta1.jpg"/></td>
+                                        <td>Men Kurta</td>
+                                        <td>2000</td>
+                                        <td><input type="number" value="1" style="width:35px;height:25px;"/></td>
+                                        <td>2000</td>
+                                        
+                                    </tr>
+                                      
+                                </tbody>
+                                
+                            </table>
+                            <button id='conf'>Confirm Order</button>
+                        </div>
+                    </div>
+                   
+                </div>
+                <a href="customer.html"><button>Go Back</button></a>
+            </div>
+
+            
+        </div>
+
+    </div>
+    <div id="myModal" class="modal">
+
+     
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Your Order is confirmed! Thank You</p>
+        </div>
+      
+      </div>
+      <script>
+       
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("conf");
+        var span = document.getElementsByClassName("close")[0];
+        
+       
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+      
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+       
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+        
+</body>
+</html>
